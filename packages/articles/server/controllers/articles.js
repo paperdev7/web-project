@@ -43,7 +43,6 @@ exports.create = function(req, res) {
  */
 exports.update = function(req, res) {
   var article = req.article;
-
   article = _.extend(article, req.body);
 
   article.save(function(err) {
