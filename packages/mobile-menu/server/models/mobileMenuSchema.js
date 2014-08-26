@@ -34,7 +34,11 @@ var mobileMenuSchema = new Schema({
     type:Boolean,
     required:true
   },
-  ver:{
+  icon:{
+    type:String,
+    trim:true
+  },
+  sort:{
     type:Number,
     trim:true
   },

@@ -20,7 +20,7 @@ angular.module('mean.mobile-menu')
     //type 0 신규
     $scope.createMenu = function(){//신규추가
     	var pid = $scope.menus.length+1;
-    	$scope.menus.push({pid:pid,name:'',title:'',url:'',disable:true,type:'0',ver:''});
+    	$scope.menus.push({pid:pid,name:'',title:'',url:'',disable:true,type:'0',icon:'',sort:''});
     };
     //신규저장
     $scope.saveMenu   = function(menu){

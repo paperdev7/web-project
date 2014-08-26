@@ -51,7 +51,7 @@ exports.update = function(req,res){
  * List of menus
  */
 exports.all = function(req, res) {
-  MobileMenus.find().sort('created').exec(function(err, datas) {
+  MobileMenus.find().sort('sort').exec(function(err, datas) {
     if (err) {
       return res.json(500, {
         error: 'Cannot list the articles'

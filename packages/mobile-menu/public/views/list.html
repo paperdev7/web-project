@@ -10,7 +10,8 @@
           <th>원문 제목</th>
           <th>URL</th>
           <th>사용여부</th>
-          <th>버전</th>
+          <th>아이콘</th>
+          <th>정렬</th>
           <th></th>
         </tr>
       </thead>
@@ -21,7 +22,8 @@
           <td><input type="text"     ng-model="menu.title"></td>
           <td><input type="text"     ng-model="menu.url"></td>
           <td><input type="checkbox" ng-model="menu.disable"></td>
-          <td><input type="number"   ng-model="menu.ver"></td>
+          <td><input type="text"   ng-model="menu.icon"></td>
+          <td><input type="number"   ng-model="menu.sort"></td>
           <td> 
               <button type="button" class="btn btn-success btn-xs" ng-click="saveMenu(menu)">저장</button>
               <button type="button" class="btn btn-primary btn-xs" ng-click="updateMenu(menu)">수정</button>
