@@ -20,6 +20,15 @@ var mobileMenuSchema = new Schema({
     required:true,
     trim:true
   },
+  menus:[
+          {
+            name:{
+              type:String,
+              required:true,
+              trim:true
+            }
+          }
+  ],
   title:{
     type:String,
     required:true,
