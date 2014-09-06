@@ -19,6 +19,9 @@ System.register(function(app, auth, database) {
   System.routes(app, auth, database);
 
   System.aggregateAsset('css', 'common.css');
+  System.aggregateAsset('css', 'sb-admin.css');
+  System.aggregateAsset('css', 'plugins/morris.css');
+
 
   // The middleware in config/express will run before this code
 
