@@ -2,7 +2,7 @@
     <div style="width:100%">
      <button type="button" class="btn btn-default" style="float:right" ng-click="createMenu()">추가</button>
     </div>
-    <table class="table table-hover">
+    <table class="table table-hover" >
       <thead>
         <tr>
           <th>#</th>
@@ -16,13 +16,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="menu in menus" >
+        <tr ng-repeat="menu in menus" class="mobileMenu">
           <td>{{menu.pid}}</td>
           <td><input type="text"     ng-model="menu.name"></td>
           <td><input type="text"     ng-model="menu.title"></td>
           <td><input type="text"     ng-model="menu.url"></td>
           <td><input type="checkbox" ng-model="menu.disable"></td>
-          <td><input type="text"   ng-model="menu.icon"></td>
+          <td><input type="text"     ng-model="menu.icon"></td>
           <td><input type="number"   ng-model="menu.sort"></td>
           <td> 
               <button type="button" class="btn btn-success btn-xs" ng-click="saveMenu(menu)">저장</button>

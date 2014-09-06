@@ -24,6 +24,7 @@ MobileMenu.register(function(app, auth, database) {
     menu: 'main'
   });
 
+  MobileMenu.aggregateAsset('css', 'mobileMenu.css');
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
