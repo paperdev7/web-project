@@ -3,7 +3,7 @@
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Global', 'Articles',
   function($scope, $stateParams, $location, Global, Articles) {
     $scope.global = Global;
-
+    $scope.files  = [];
     $scope.hasAuthorization = function(article) {
       if (!article || !article.user) return false;
       return $scope.global.isAdmin || article.user._id === $scope.global.user._id;
@@ -11,10 +11,13 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
     $scope.create = function(isValid) {
       if (isValid) {
+        console.log(this);
         var article = new Articles({
           title: this.title,
-          content: this.content
+          content: this.content,
+          files:$scope.files
         });
+
         article.$save(function(response) {
           $location.path('articles/' + response._id);
         });
@@ -69,7 +72,18 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         articleId: $stateParams.articleId
       }, function(article) {
         $scope.article = article;
+        console.log($scope.article);
       });
     };
+
+    $scope.uploadFileCallback = function(file){
+      var uploadFile = {
+                    "name":file.name,
+                    "size":file.size,
+                    "path":file.src
+                  };
+      $scope.files.push(uploadFile);
+    };
+
   }
 ]);

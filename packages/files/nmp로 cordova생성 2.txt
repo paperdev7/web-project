@@ -1,0 +1,29 @@
+node ant 装 
+##########################################################
+
+npm install -g cordova
+
+cordova create CordovaDemo com.saesol.Cordova CordovaDemo
+cd CordovaDemo
+cordova platform add android
+cordova platforms ls
+sudo cordova plugin add org.apache.cordova.device
+sudo cordova plugin add org.apache.cordova.network-information
+sudo cordova plugin add org.apache.cordova.battery-status
+sudo cordova plugin add org.apache.cordova.device-motion
+sudo cordova plugin add org.apache.cordova.device-orientation
+sudo cordova plugin add org.apache.cordova.geolocation
+sudo cordova plugin add org.apache.cordova.camera
+sudo cordova plugin add org.apache.cordova.media-capture
+sudo cordova plugin add org.apache.cordova.media
+sudo cordova plugin add org.apache.cordova.file
+sudo cordova plugin add org.apache.cordova.file-transfer
+sudo cordova plugin add org.apache.cordova.dialogs
+sudo cordova plugin add org.apache.cordova.vibration
+sudo cordova plugin add org.apache.cordova.contacts
+sudo cordova plugin add org.apache.cordova.globalization
+sudo cordova plugin add org.apache.cordova.splashscreen
+sudo cordova plugin add org.apache.cordova.inappbrowser
+sudo cordova plugin add org.apache.cordova.console
+sudo cordova build android -d
+sudo cordova plugin ls

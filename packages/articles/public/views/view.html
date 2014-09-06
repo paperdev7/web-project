@@ -11,4 +11,8 @@
     </a>
   </div>
   <div>{{article.content}}</div>
+  <div data-ng-repeat="file in article.files">
+      <img data-ng-src="{{file.path}}" alt="{{file.name}}">
+  </div>
+   <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 5)"/>
 </section>

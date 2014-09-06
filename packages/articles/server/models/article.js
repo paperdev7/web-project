@@ -28,7 +28,23 @@ var ArticleSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
-  }
+  },
+  files:[
+          {
+            name:{
+              type:String,
+              trim:true
+            },
+            size:{
+              type:String,
+              trim:true
+            },
+            path:{
+              type:String,
+              trim:true
+            }
+          }
+        ]
 });
 
 /**
