@@ -7,4 +7,8 @@ module.exports = function(System, app, auth, database) {
   app.route('/')
     .get(index.render);
 
+  app.route('/images/:fold1/:fold2/:file')
+      .get(index.images);
+
+  //app.param('path', index.article);
 };

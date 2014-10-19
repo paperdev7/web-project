@@ -36,7 +36,7 @@ angular.module('mean.users')
   .controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location',
     function($scope, $rootScope, $http, $location) {
       $scope.user = {};
-
+      $scope.files  = [];
       $scope.register = function() {
         $scope.usernameError = null;
         $scope.registerError = null;
@@ -45,7 +45,8 @@ angular.module('mean.users')
           password: $scope.user.password,
           confirmPassword: $scope.user.confirmPassword,
           username: $scope.user.username,
-          name: $scope.user.name
+          name: $scope.user.name,
+          files:$scope.files
         })
           .success(function() {
             // authentication OK
@@ -63,6 +64,15 @@ angular.module('mean.users')
             } else $scope.registerError = error;
           });
       };
+
+      $scope.uploadFileCallback = function(file){
+            var uploadFile = {
+                "name":file.name,
+                "size":file.size,
+                "path":file.src
+            };
+            $scope.files.push(uploadFile);
+        };
     }
   ])
   .controller('ForgotPasswordCtrl', ['$scope', '$rootScope', '$http', '$location',

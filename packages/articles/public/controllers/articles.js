@@ -11,7 +11,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
     $scope.create = function(isValid) {
       if (isValid) {
-        console.log(this);
+        //console.log(this);
         var article = new Articles({
           title: this.title,
           content: this.content,

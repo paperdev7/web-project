@@ -5,6 +5,7 @@
  */
 var mongoose = require('mongoose'),
   Article = mongoose.model('Article'),
+   // User = mongoose.model('User'),
   _ = require('lodash');
 
 
@@ -77,19 +78,20 @@ exports.destroy = function(req, res) {
  * Show an article
  */
 exports.show = function(req, res) {
-  res.json(req.article);
+    res.json(req.article);
 };
 
 /**
  * List of Articles
  */
 exports.all = function(req, res) {
-  Article.find().sort('-created').populate('user', 'name username').exec(function(err, articles) {
+  Article.find().sort('-created').populate('user', 'name username files').exec(function(err, articles) {
     if (err) {
       return res.json(500, {
         error: 'Cannot list the articles'
       });
     }
+   // console.log(articles);
     res.json(articles);
 
   });

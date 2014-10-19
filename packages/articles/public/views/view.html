@@ -12,7 +12,9 @@
   </div>
   <div>{{article.content}}</div>
   <div data-ng-repeat="file in article.files">
-      <img data-ng-src="{{file.path}}" alt="{{file.name}}">
+      <img data-ng-src="/images{{file.path}}" alt="{{file.name}}" style="width:320px;height:280px;">
   </div>
-   <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 5)"/>
+    <div ng-if="article !== undefined" ng-include="'comments/views/index.html'" data-ng-controller="CommentsController" data-ng-init="findComments(article, 2)"/>
 </section>
+
+<div id="spot-im-root"></div><script>!function(t,e,o){function p(){var t=e.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==e.location.protocol?"https":"http")+":"+o,e.body.appendChild(t)}t.spotId="e4d76a91d7bfd6152d1c174d3bc131a0",t.spotName="",t.allowDesktop=!0,t.allowMobile=!1,t.containerId="spot-im-root",p()}(window.SPOTIM={},document,"//www.spot.im/embed/scripts/launcher.js");</script>

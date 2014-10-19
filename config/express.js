@@ -118,4 +118,5 @@ module.exports = function(app, passport, db) {
   };
   app.use(allowCrossDomain);
 
+  
 };

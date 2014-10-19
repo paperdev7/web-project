@@ -2,6 +2,7 @@
 
 angular.module('mean.system').controller('HeaderController', ['$scope', '$rootScope', 'Global', 'Menus',
   function($scope, $rootScope, Global, Menus) {
+
     $scope.global = Global;
     $scope.menus = {};
 
@@ -27,11 +28,12 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
     $rootScope.$on('loggedin', function() {
 
       queryMenu('main', defaultMainMenu);
-
+     // console.log($rootScope);
       $scope.global = {
         authenticated: !! $rootScope.user,
         user: $rootScope.user
       };
+       //console.log(global.user.files[0].path);
     });
 
   }

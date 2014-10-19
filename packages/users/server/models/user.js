@@ -63,6 +63,22 @@ var UserSchema = new Schema({
     type: String,
     default: 'local'
   },
+  files:[
+     {
+       name:{
+                type:String,
+                trim:true
+            },
+       size:{
+                type:String,
+                trim:true
+            },
+       path:{
+                type:String,
+                trim:true
+            }
+      }
+  ],
   salt: String,
   resetPasswordToken: String,
   resetPasswordExpires: Date,
