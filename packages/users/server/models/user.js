@@ -59,6 +59,17 @@ var UserSchema = new Schema({
     type: String,
     validate: [validatePresenceOf, 'Password cannot be blank']
   },
+  birth:{
+      type: String,
+      required: true
+  },
+  sexy:{
+      type: String,
+      required: true
+  },
+  sigin:{
+      type: String
+  },
   provider: {
     type: String,
     default: 'local'

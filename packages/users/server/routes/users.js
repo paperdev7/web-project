@@ -4,7 +4,7 @@
 var users = require('../controllers/users');
 
 module.exports = function(MeanUser, app, auth, database, passport) {
-
+ console.log(auth);
   app.route('/logout')
     .get(users.signout);
   app.route('/users/me')

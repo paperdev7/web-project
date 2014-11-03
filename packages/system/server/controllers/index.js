@@ -36,7 +36,7 @@ exports.render = function(req, res) {
 
 exports.images = function(req,res){
     var path = __dirname.split('/')[0]+__dirname.split('/')[1]+__dirname.split('/')[2]+__dirname.split('/')[3]+__dirname.split('/')[4];
-    //console.log(path);
+   // console.log(rootPath);
     fs.readFile('/Users/huang/Sites/hybrid/mean/web-project/'+req.params.fold1+'/'+req.params.fold2+'/'+req.params.file, function (err, data) {
         if (err) throw err;
 
