@@ -4,7 +4,7 @@
 var users = require('../controllers/users');
 
 module.exports = function(MeanUser, app, auth, database, passport) {
- console.log(auth);
+ //console.log(auth);
   app.route('/logout')
     .get(users.signout);
   app.route('/users/me')
@@ -34,6 +34,7 @@ module.exports = function(MeanUser, app, auth, database, passport) {
     .post(passport.authenticate('local', {
       failureFlash: true
     }), function(req, res) {
+     // console.log(res);
       res.send({
         user: req.user,
         redirect: (req.user.roles.indexOf('admin') !== -1) ? req.get('referer') : false

@@ -11,7 +11,7 @@ var mongoose = require('mongoose'),
   config = require('meanio').loadConfig();
 
 module.exports = function(passport) {
-
+ 
   // Serialize the user id to push into the session
   passport.serializeUser(function(user, done) {
     done(null, user.id);
@@ -33,6 +33,7 @@ module.exports = function(passport) {
       passwordField: 'password'
     },
     function(email, password, done) {
+     // console.log(email);
       User.findOne({
         email: email
       }, function(err, user) {

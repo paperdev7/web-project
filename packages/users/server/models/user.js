@@ -60,12 +60,12 @@ var UserSchema = new Schema({
     validate: [validatePresenceOf, 'Password cannot be blank']
   },
   birth:{
-      type: String,
-      required: true
+      type: String//,
+      //required: true
   },
   sexy:{
-      type: String,
-      required: true
+      type: String//,
+     // required: true
   },
   sigin:{
       type: String

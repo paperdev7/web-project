@@ -85,6 +85,7 @@ module.exports = function(app, passport, db) {
     cookie: config.sessionCookie,
     name: config.sessionName,
     resave: true,
+    proxy: true,
     saveUninitialized: true
   }));
 
@@ -93,6 +94,7 @@ module.exports = function(app, passport, db) {
 
   // Use passport session
   app.use(passport.initialize());
+
   app.use(passport.session());
 
   //mean middleware from modules before routes
@@ -103,10 +105,11 @@ module.exports = function(app, passport, db) {
 
 // ## CORS middleware
 // see: http://stackoverflow.com/questions/7067966/how-to-allow-cors-in-express-nodejs
+
   var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
 
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
